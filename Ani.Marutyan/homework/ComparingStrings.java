@@ -1,4 +1,9 @@
 package sc;
+//*******************************************************************
+// Java compiler created in PHP to quickly and safely test code.
+// NOTE: please read the 'More Info' tab to the right for shortcuts.
+//*******************************************************************
+
 
 import java.util.Scanner;
 
@@ -8,18 +13,23 @@ import java.util.Scanner;
 public class StringComparison {
 
     public static boolean CompareStrings ( String first_string, String second_string ){
-
-        char [] first_array = first_string.toUpperCase().toCharArray();
-        char [] second_array = second_string.toUpperCase().toCharArray();
-        int i = 0;
-        while ( i < first_array.length ) {
-            if (first_array[i] == second_array[i])
-                i++;
-            else break;
+        
+        if (first_string.length() == second_string.length()){
+            char [] first_array = first_string.toUpperCase().toCharArray();
+            char [] second_array = second_string.toUpperCase().toCharArray();
+            int i = 0;
+            while ( i < first_array.length ) {
+                if (first_array[i] == second_array[i])
+                    i++;
+                else break;
+            }
+    
+            if ( i == first_array.length )
+                return true;
+                
+        else
+            return false;
         }
-
-        if ( i == first_array.length )
-            return true;
         else
             return false;
     }
@@ -31,11 +41,12 @@ public class StringComparison {
         String st1;
         String st2;
         System.out.println("Please input the first character string: ");
-        st1 = input.nextLine();
+        st1 = "asd";
         System.out.println("And the second one: ");
-        st2 = input.nextLine();
-
-        if (CompareStrings (st1, st2))
+        st2 = "asd";
+        
+      	
+        if (st1 == st2 || CompareStrings (st1, st2))
             System.out.println("The strings match");
         else
             System.out.println("The strings don't match");
